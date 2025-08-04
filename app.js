@@ -3,6 +3,7 @@ const app = express();
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const multer = require('multer');
+require('dotenv').config();
 
 const http = require('http');
 const server = http.createServer(app);
@@ -13,7 +14,7 @@ const upload = multer({ storage: storage, limits: { fileSize: 10 * 1024 * 1024 }
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
-const uri = "mongodb+srv://AWGERS:0000@cluster0.oiofglt.mongodb.net/?appName=Cluster0";
+const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
