@@ -1,0 +1,14 @@
+body{
+  background-color: #353535;
+}
+
+.centered-container{
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+#select-deck-div{
+  display: flex;
+  justify-content: center;
+}
+

@@ -1,0 +1,10 @@
+body{
+  background-color: #353535;
+}
+
+#allyou{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}

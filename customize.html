@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customize Appearance</title>
+  <link rel="stylesheet" href="./js/customize.css">
+</head>
+<body>
+
+  <button id="change-squares">Change Squares</button>
+
+  <div id="compact-div">
+
+    <div id="row-1">
+
+      <div id="section-1" class="section">
+
+        <div>
+          <label for="back-of-card-button">Back Of Card Color</label>
+          <input type="color" id="back-of-card-button" value="#00b890">
+        </div>
+
+        <div class="cell-container">
+
+          <div class="row">
+
+            <div class="cell light-squares">
+              <div id="back-card" class='back-of-card'></div>
+            </div>
+
+            <div class="cell dark-squares"></div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="cell dark-squares"></div>
+
+            <div class="cell light-squares"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div id="section-2" class="section">
+
+        <div>
+          <label for="enemy-border-color-button">Enemy Border Color</label>
+          <input type="color" id="enemy-border-color-button" value="#fca1ff">
+        </div>
+
+        <div class="cell-container">
+
+          <div class="row">
+
+            <div class="cell dark-squares"></div>
+
+            <div class="cell light-squares">
+              <div class="card" id="enemy-border-color"><img></div>
+            </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="cell light-squares"></div>
+
+            <div class="cell dark-squares"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="row-2">
+
+      <div id="section-3" class="section">
+
+        <div>
+          <label for="player-border-color-button">Player Border Color</label>
+          <input type="color" id="player-border-color-button" value="#a1f1ff">
+        </div>
+
+        <div class="cell-container">
+
+          <div class="row">
+
+            <div class="cell light-squares">
+              <div id="player-border-color" class="card"><img></div>
+            </div>
+
+            <div class="cell dark-squares"></div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="cell dark-squares"></div>
+
+            <div class="cell light-squares"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div id="section-4" class="section">
+
+        <div>
+          <label for="attack-enemy-highlight-button">Attack Enemy Highlight</label>
+          <input type="color" id="attack-enemy-highlight-button-from" value="#ff2727">
+          <input type="color" id="attack-enemy-highlight-button-to" value="#ff2756">
+        </div>
+
+        <div class="cell-container">
+
+          <div class="row">
+
+            <div class="cell dark-squares"></div>
+
+            <div class="cell light-squares">
+              <div id="attack-enemy-highlight" class="card"><img></div>
+            </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="cell light-squares"></div>
+
+            <div class="cell dark-squares"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="row-3">
+
+      <div id="section-5" class="section">
+
+        <div>
+          <label for="movement-highlight-button">Movement Highlight</label>
+          <input type="color" id="movement-highlight-button-from" value="#ffff00">
+          <input type="color" id="movement-highlight-button-to" value="#ffa500">
+        </div>
+
+
+        <div class="cell-container">
+
+          <div class="row">
+
+            <div id="highlighted-square" class="cell light-squares">
+              <div id="movement-highlight"></div>
+            </div>
+
+            <div class="cell dark-squares"></div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="cell dark-squares"></div>
+
+            <div class="cell light-squares"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  <div id="customize-buttons">
+    <button id="save-customization">Save & Return</button>
+    <button id="reset-customization">Reset Customization</button>
+  </div>
+
+  </div>
+
+
+  <script type="module" src="./js/customize.js"></script>
+</body>
+</html>

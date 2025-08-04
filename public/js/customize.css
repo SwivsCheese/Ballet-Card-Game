@@ -1,0 +1,120 @@
+body{
+  background-color: #353535; /*#353535*/
+}
+
+.highlight-square{
+  outline: 3px solid rgb(0, 253, 241);
+  outline-offset: -3px;
+  animation: glow 0.8s infinite alternate;
+}
+
+.highlight-red{
+  outline: 3px solid rgb(255, 39, 39);
+  outline-offset: -3px;
+  animation: glow-red 0.7s infinite alternate;
+}
+
+/*
+@keyframes glow {
+  from { outline-color: yellow; } 
+  to { outline-color: orange; }
+}
+*/
+
+/*
+
+@keyframes glow-red {
+  from { outline-color: rgb(255, 39, 39); }
+  to { outline-color: rgb(255, 39, 86); } 
+}
+
+*/
+
+
+.back-of-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 80px;
+  border-radius: 3px;
+  margin: 2px; 
+}
+
+#back-card{
+  background-color: rgb(0, 184, 144);
+}
+
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 80px;
+  border-radius: 3px;
+  margin: 2px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  background-color: rgb(126, 126, 126);
+}
+
+#compact-div{
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.cell-container{
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.row{
+  display: flex;
+}
+
+.cell{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85px;
+  height: 85px;
+  border: 1px solid black;
+}
+
+.dark-squares{
+  background-color: rgb(181, 136, 99);
+}
+
+.light-squares{
+  background-color: rgb(240, 217, 181);
+}
+
+.section{
+  margin: 10px;
+}
+
+#row-1, #row-2{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+#row-3{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#enemy-border-color{
+  border: 2px solid rgb(252, 161, 255);
+}
+
+#player-border-color{
+  border: 2px solid rgb(161, 241, 255);
+}

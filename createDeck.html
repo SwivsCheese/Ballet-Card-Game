@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Deck</title>
+  <link rel="stylesheet" href="./js/createDeck.css">
+</head>
+<body>
+
+  <div class="centered-container">
+
+    <div id="images">
+      <form method="post" enctype="multipart/form-data">
+        <input type="file" id="myPictures" webkitdirectory multiple>
+      </form>
+    </div>
+
+    <div id="card-deck">
+      <form method="post" enctype="multipart/form-data">
+        <input type="file" id="myCardDeck" accept="application/json">
+      </form>
+    </div>
+
+    <div>
+      <input id="name-of-deck">
+      <button id="imagesAndCardDeck">Upload Deck</button>
+    </div>
+
+  </div>
+
+  <div class="centered-container">
+
+    <div id="select-deck-div">
+
+      <label for="face-of-deck">Select Custom Deck:</label>
+      <select id="face-of-deck" name="face-of-deck">
+        <option value="Classic">Classic</option>
+      </select>
+
+      <button id="select-deck">Select This Deck</button>
+    </div>
+
+  </div>
+
+  <script type="module" src="./js/createDeck.js"></script>
+
+</body>
+</html>

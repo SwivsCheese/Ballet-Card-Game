@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>play</title>
+</head>
+<body>
+  <link rel="stylesheet" href="./js/play.css">
+
+  <div id="playArea">
+    <div id="centered">
+      <div id="card-modal">
+        <div id="entire-card" style="visibility: hidden">
+          <div id="entire-name"></div>
+          <div id="entire-div-image"><img id="entire-image"></img></div>
+          <div id="entire-health"></div>
+          <div id="entire-attack"></div>
+          <div id="entire-mana"></div>
+          <div id="entire-movement"></div>
+          <div id="entire-description"></div>
+        </div>
+      </div>
+  
+      <div id="main-centered">
+        <div id="game-area">
+          <div id="hand1"></div>
+          <div id="main-board">
+            <div id="cardArea1" class="no-select">cards</div>
+
+              <div id="board">
+
+              </div>
+
+            <div id="cardArea2" class="no-select">cards</div>
+          </div>
+          <div id="hand2"></div>
+        </div>
+      </div>
+
+      <div id="action-area">
+        <div id="all-actions"></div>
+        <div id="stuff-happening">
+        </div>
+      </div>
+
+    </div>
+    <div id="pushers">
+      <button id="end-turn">End Turn</button>
+    </div>
+    <div id="action-buttons" style="position: absolute;">
+      <button id="action-button">Attack</button>
+      <button id="ability-button">Ability</button>
+      <button id="attatched-button">Attach</button>
+    </div>
+    <div id="myModal" class="modal">
+
+      <div class="modal-content">
+        <!-- <span class="close">&times;</span> -->
+        <div id="seek-placement">
+        </div>
+        <div class="button-center">
+          <button id="close-modal">Select These 2 Cards</button>
+        </div>
+      </div>
+      
+
+    </div>
+    <div id="end-game-modal" class="modal">
+      <div class="modal-content">
+
+        <div id="end-game-content"></div>
+
+        <div class="button-center">
+          <button id="close-end-modal">Return to Home</button>
+        </div>
+        
+      </div>
+    </div>
+
+    <div id="waiting-for-opponent" class="modal">
+      <div class="modal-content">
+        <h2>Waiting For Opponent...</h2>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+  <script type="module" src="./js/play.js"></script>
+  <!-- <script src="./public/js/classes/Card.js"></script> -->
+  
+</body>
+</html>

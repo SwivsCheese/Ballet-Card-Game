@@ -1,0 +1,503 @@
+body{
+  background-color: #353535; /*#353535*/
+  overflow: hidden;
+}
+
+.no-select {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#board{
+  display: flex;
+  flex-direction: column;
+}
+
+.cellContainer{
+  display: flex;
+}
+
+.cell{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85px;
+  height: 85px;
+  border: 1px solid black;
+}
+
+.cell.fogged{
+  filter: brightness(40%) grayscale(80%);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#centered{
+  display: flex;
+}
+
+#main-centered{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+}
+
+#game-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+#main-board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hand1, #hand2 {
+  display: flex;
+  justify-content: center;
+  width: 700px;
+  height: 90px;
+  padding: 5px;
+  border: 1px dotted white;
+  margin: auto;
+}
+
+#cardArea1{
+  margin: 20px;
+  background-color: #a5a5a5;
+  width: 65px;
+  height: 85px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+#cardArea2{
+  margin: 20px;
+  background-color: #a5a5a5;
+  width: 65px;
+  height: 85px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 80px;
+  border-radius: 3px;
+  margin: 2px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  background-color: rgb(126, 126, 126);
+}
+
+#card-modal{
+  display: flex;
+  justify-content: flex-start;
+  margin: 60px;
+  margin-top: 100px;
+  border-radius: 6px;
+  /* at some point fix this it's really bad */
+}
+
+#entire-card{
+  border-radius: 6px;
+  background-color: rgb(114, 114, 114);
+  width: 350px;
+  height: 550px;
+  /* at some point fix this so height and width are dynamic */
+}
+
+#entire-name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  font-size: 30px;
+  color: white;
+  background-color: rgb(87, 87, 87);
+}
+
+#entire-div-image{
+  display: flex;
+  justify-content: center;
+}
+
+#entire-image{
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  width: 300px;
+}
+
+#entire-health{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  font-size: 30px;
+  color: white;
+  background-color: rgb(87, 87, 87);
+}
+
+#entire-attack{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  font-size: 30px;
+  color: white;
+  background-color: rgb(87, 87, 87);
+}
+
+#entire-mana{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  font-size: 30px;
+  color: white;
+  background-color: rgb(87, 87, 87);
+}
+
+#entire-movement{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  font-size: 30px;
+  color: white;
+  background-color: rgb(87, 87, 87);
+}
+
+#entire-description{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(87, 87, 87);
+}
+
+#action-button{
+  width: 80px;
+  height: 24px;
+}
+
+#ability-button{
+  width: 80px;
+  height: 24px;
+}
+
+#attatched-button{
+  width: 80px;
+  height: 24px;
+}
+
+#end-turn{
+  width: 80px;
+  height: 24px;
+}
+
+.back-of-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 80px;
+  border-radius: 3px;
+  margin: 2px;
+  /*background-color: rgb(0, 184, 144);*/
+}
+
+#pushers{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#action-area{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+#all-actions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 10%;
+  margin-top: 100px;
+  background-color: rgb(0, 132, 255);
+  visibility: hidden;
+}
+
+.highlight-square{
+  outline: 3px solid;
+  outline-offset: -3px;
+  animation: glow 0.8s infinite alternate;
+}
+
+.highlight-red{
+  outline: 3px solid;
+  outline-offset: -3px;
+  animation: glow-red 0.7s infinite alternate;
+}
+
+/*
+
+@keyframes glow {
+  from { outline-color: yellow; }
+  to { outline-color: orange; }
+}
+
+@keyframes glow-red {
+  from { outline-color: #ff2727; }
+  to { outline-color: #ff2756; }
+}
+
+*/
+
+#hand1 .card{
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+#hand1 .card.hovered{
+  transform: translateY(-20px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+#hand2 .card{
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+#hand2 .card.hovered{
+  transform: translateY(-20px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+@keyframes shake{
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes fadeIn{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut{
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.shake{
+  animation: shake 0.5s ease-in-out;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.fade-out {
+  opacity: 1;
+  animation: fadeOut 0.5s ease forwards;
+}
+
+.projectile{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: red;
+  position: absolute;
+  z-index: 1000;
+  transition: all 0.5s ease-out;
+}
+
+.modal{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content{
+  background-color: #575757;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close{
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#seek-placement{
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.button-center{
+  display: flex;
+  justify-content: center;
+}
+
+#close-modal{
+  visibility: hidden;
+}
+
+
+.cartier{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 80px;
+  border-radius: 3px;
+  margin: 2px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  background-color: rgb(126, 126, 126);
+}
+
+.card-flip-container{
+  perspective: 1000px;
+  width: 60px; 
+  height: 80px;
+}
+
+.card-flip{
+  position: relative;
+  width: 60px;
+  height: 80px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card-front,
+.card-back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 2px solid rgb(161, 241, 255); /* optional */
+}
+
+.card-front{
+  z-index: 2;
+}
+
+.card-back{
+  transform: rotateY(180deg);
+}
+
+.card-flip.flipped{
+  transform: rotateY(180deg);
+}
+
+#action-buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1px;
+  width: 60px;
+  height: 85px;
+  /*border: 2px solid rgb(141, 141, 255);*/
+  pointer-events: auto;
+  z-index: 1000;
+}
+
+#action-button, #ability-button, #attatched-button{
+  width: 60px;
+  height: 20px;
+  background-color: rgb(0, 132, 255);
+  display: none;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+#stuff-happening{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 90%;
+  max-height: 200px;
+  margin-top: 100px;
+  background-color: rgb(0, 132, 255);
+  overflow-x: hidden;
+  overflow-y: auto;
+  gap: 2px;
+}
+
+#stuff-happening p{
+  display: inline;
+}
+
+#end-game-content{
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+#close-end-modal{
+  visibility: visible;
+}

@@ -1,0 +1,23 @@
+body{
+  background-color: #353535
+}
+
+.login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.anonymous{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
