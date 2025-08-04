@@ -14,6 +14,7 @@ const upload = multer({ storage: storage, limits: { fileSize: 10 * 1024 * 1024 }
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
+console.log(process.env.MONGODB_URI);
 const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri, {
   serverApi: {
@@ -696,7 +697,7 @@ io.on('connection', (socket) => {
   console.log('players', players);
 });
 
-mongoose.connect("mongodb+srv://AWGERS:0000@cluster0.oiofglt.mongodb.net/?appName=Cluster0",{
+mongoose.connect(process.env.MONGODB_URI,{
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
