@@ -23,6 +23,7 @@ let customDeck2;
 const waitingForOpponent = document.getElementById("waiting-for-opponent");
 waitingForOpponent.style.display = "block";
 
+/*
 document.addEventListener("DOMContentLoaded", async () => {
   Promise.all([
     fetch('/api/customize-data').then(res => res.json()),
@@ -77,6 +78,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error('Error fetching data:', err);
   });
 });
+*/
 
 //import Card from "./classes/card.js";
 import customDeckImport from "./cards/deck1.js";
@@ -284,7 +286,7 @@ socket.on('connection', () => {
   console.log('joined room', room);
 });
 
-socket.on('player-assigned', (data) => {
+socket.on('player-assigned', async (data) => {
   console.log('THE PLAYER ASSIGNED', data.player);
 
   if(playerassigned){
@@ -319,6 +321,56 @@ socket.on('player-assigned', (data) => {
   }
 
   alreadyDrew = 4;
+
+  try{
+    const [customizeData, customDeckData] = await Promise.all([
+      fetch('/api/customize-data').then(res => res.json()),
+      fetch('/api/use-custom-deck').then(res => res.json())
+    ]);
+
+    backOfCardColor = customizeData.backOfCard;
+    enemyBorderColor = customizeData.enemyBorder;
+    playerBorderColor = customizeData.playerBorder;
+    attackHighlightFromColor = customizeData.attackHighlightFrom;
+    attackHighlightToColor = customizeData.attackHighlightTo;
+    movementHighlightFromColor = customizeData.movementHighlightFrom;
+    movementHighlightToColor = customizeData.movementHighlightTo;
+
+    updateGlowKeyframes();
+    updateGlowRedKeyframes();
+
+    console.log(customDeckData, "CUSTOM DECK DATA");
+
+    if(customDeckData !== null){
+      customPlayerDeck = customDeckData.$__parent.decks[customDeckData.$__parent.currentDeck].cardDeck;
+      const objectOfObjects = customDeckData.images.reduce((acc, cur) => {
+        acc[cur.filename] = cur;
+        return acc;
+      }, {});
+
+      customPlayerDeck.forEach((card) => {
+        card.image = objectOfObjects[card.image]?.src;
+      });
+    }
+
+    if(window.playerNumber == 1){
+      customDeck2 = customPlayerDeck || customDeckImport;
+      customDeck2.sort(() => Math.random() - 0.5);
+      console.log("okay this should be player 1", window.playerNumber);
+    }
+    else if(window.playerNumber == 2){
+      customDeck = customPlayerDeck || customDeckImport2;
+      customDeck.sort(() => Math.random() - 0.5);
+      console.log("okay this should be player 2", window.playerNumber);
+      socket.emit('start-game', { roomid: room });
+      waitingForOpponent.style.display = "none";
+    }
+
+  }
+  catch(err){
+    console.error('Error fetching data:', err);
+  }
+
 });
 
 socket.on('recieved-start-game', (elem) => {
