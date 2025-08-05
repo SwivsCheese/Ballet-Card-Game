@@ -1,4 +1,4 @@
-import Card from "../classes/Card.js";
+import Card from "../classes/card.js";
 
 const bobm = new Card(
   5, //heath
@@ -13,7 +13,6 @@ const bobm = new Card(
   "attacker",
   5,
   0,
-
 );
 
 const robloxguy = new Card(
