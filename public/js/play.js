@@ -57,12 +57,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     if(window.playerNumber == 1){
       customDeck2 = customPlayerDeck || customDeckImport;
       customDeck2.sort(() => Math.random() - 0.5);
+      console.log("okay this should be player 1", window.playerNumber);
+      return;
     }
     else{
       customDeck = customPlayerDeck || customDeckImport2;
       customDeck.sort(() => Math.random() - 0.5);
+      console.log("okay this should be player 2", window.playerNumber);
       socket.emit('start-game', { roomid: room });
       waitingForOpponent.style.display = "none";
+      return;
     }
   })
   .catch(err => {
