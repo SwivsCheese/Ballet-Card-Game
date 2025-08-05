@@ -1,4 +1,3 @@
-// 
 import Card from "../classes/Card.js";
 
 const bobm = new Card(
@@ -14,7 +13,6 @@ const bobm = new Card(
   "attacker",
   5,
   0,
-
 );
 
 const robloxguy = new Card(
@@ -492,10 +490,8 @@ const bee = new Card(
   "attacker",
   0,
   0,
-  
 );
 
-// remember to fix gluer and fix it's code
 let customDeckImport = [
   bobm, health_potion, robloxguy, nuke, vyvanse, funny_vest, Sun, cigarguy, bee_keeper,
   docholliday, gambler, grok, draw_more, cactus_jack, wall, mana_card, Oil_Spill, JSN_, draw_more,
@@ -503,11 +499,6 @@ let customDeckImport = [
   puller, puller, fog_of_war, seek_n_draw,seek_n_draw,seek_n_draw,seek_n_draw,seek_n_draw,seek_n_draw,
   steal_card, steal_card, steal_card, steal_card, necromancer, necromancer, necromancer, necromancer,
   necromancer, necromancer, necromancer, necromancer, necromancer, necromancer, necromancer
-  
 ];
-
-/*
-
-*/
 
 export default customDeckImport;

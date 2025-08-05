@@ -491,9 +491,8 @@ const bee = new Card(
   "attacker",
   0,
   0,
-  
 );
-// remember to fix gluer and fix it's code
+
 let customDeckImport2 = [
   bobm, health_potion, robloxguy, nuke, vyvanse, funny_vest, Sun, cigarguy, bee_keeper,
   docholliday, gambler, grok, draw_more, cactus_jack, wall, mana_card, Oil_Spill, JSN_, draw_more,
