@@ -1,3 +1,4 @@
+console.log("okay great, we made it!");
 const socket = io();
 const params = new URLSearchParams(window.location.search);
 const room = params.get("room");
