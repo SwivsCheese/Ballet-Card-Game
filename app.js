@@ -67,7 +67,7 @@ const decks = db.collection("CardDecks"); // validate and sanitize pictures
 const UserCredentials = mongoose.model('UserCredentials', userCredSchema, 'U/P');
 const User = mongoose.model('User', userSchema, 'CardDecks');
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 
@@ -702,7 +702,7 @@ mongoose.connect(process.env.MONGODB_URI,{
   useUnifiedTopology: true
 }).then(() => {
   server.listen(port, () => {
-    console.log(`Server: http://localhost:${port}`);
+    console.log(`Server: ${port}`);
   });
 });
 
