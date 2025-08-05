@@ -11,6 +11,7 @@ const { Server } = require('socket.io');
 const io = new Server(server, { pingInterval: 2000, pingTimeout: 5000 });
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage, limits: { fileSize: 10 * 1024 * 1024 } });
+console.log('please');
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
