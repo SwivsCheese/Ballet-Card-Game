@@ -485,14 +485,17 @@ io.on('connection', (socket) => {
   }
 
   socket.on("join-room", (room) => {
-
     if(!rooms[room]){
       rooms[room] = [];
     }
+    console.log('this is the room,man: ', room, rooms[room], rooms[room].length);
+
+    if(rooms[room].length >= 2) return;
 
     if(!rooms[room].includes(socket.id)){
       rooms[room].push(socket.id);
     }
+    console.log('this is the room,man2: ', room, rooms[room], rooms[room].length);
 
     socket.join(room);
     console.log(`user ${socket.id} joined room ${room}`);
@@ -506,44 +509,12 @@ io.on('connection', (socket) => {
       io.to(room).emit("start-game", room);
     }
 
-    // if room has more than 2 players, delete the room
-    // eventually figure this out so that the room is deleted
-    // and the players are moved to home page
-    // or something like that idk.
-    /*
-    if(rooms[room].length > 2){
-      delete rooms[room];
-      return;
-
-    }
-    */ 
-
     else{
       socket.emit("waiting");
     }
-    
-   //socket.join(room);
    console.log('PLAYERS IN ROOM', rooms[room]);
-    /*
-    socket.on("disconnect", () => {
-      rooms[room] = rooms[room].filter(id => id !== socket.id);
-      if(rooms[room].length === 0){
-        delete rooms[room];
-      }
-    });
-    */
 
   });
-
-
-  //io.emit('updatePlayers', players);
-  /*
-  socket.on('disconnect', (reason) => {
-    console.log(reason);
-    delete players[socket.id];
-    io.emit('updatePlayers', players);
-  });
-  */
 
   socket.on('disconnect', (reason) => {
     console.log(`Socket ${socket.id} disconnected:`, reason);
