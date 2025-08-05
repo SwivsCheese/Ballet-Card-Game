@@ -1,4 +1,4 @@
-import Card from "../classes/card.js";
+import Card from "../classes/Card.js";
 
 const bobm = new Card(
   5, //heath
