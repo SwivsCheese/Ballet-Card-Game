@@ -363,6 +363,7 @@ socket.on('player-assigned', async (data) => {
       customDeck.sort(() => Math.random() - 0.5);
       console.log("okay this should be player 2", window.playerNumber);
       socket.emit('start-game', { roomid: room });
+      console.log("socket should have sent");
       waitingForOpponent.style.display = "none";
     }
 
@@ -375,6 +376,7 @@ socket.on('player-assigned', async (data) => {
 
 socket.on('recieved-start-game', (elem) => {
   waitingForOpponent.style.display = "none";
+  console.log('what is the problem man');
 });
 
 socket.on('recieve-movement', (element) => {
