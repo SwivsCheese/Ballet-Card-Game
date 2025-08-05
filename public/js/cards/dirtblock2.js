@@ -1,6 +1,6 @@
-import Card from "../classes/Card.js";
+import card from "../classes/card.js";
 
-const dirtBlock = new Card(
+const dirtBlock = new card(
   15,
   0,
   0,

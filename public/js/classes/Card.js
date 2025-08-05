@@ -1,5 +1,5 @@
 
-class Card{
+class card{
   constructor(health, attack, mana, movement, name, image, description, ability, attatched, determiner, abilityAttack, abilityRange){
     this.health = health;
     this.attack = attack;
@@ -15,7 +15,7 @@ class Card{
     this.abilityRange = abilityRange;
   }
   static fromObject(obj){
-    return new Card(
+    return new card(
       obj.health,
       obj.attack,
       obj.mana,
@@ -33,4 +33,4 @@ class Card{
 }
 
 
-export default Card;
+export default card;

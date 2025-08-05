@@ -1,6 +1,6 @@
-import Card from "../classes/Card.js";
+import card from "../classes/card.js";
 
-const bobm = new Card(
+const bobm = new card(
   5, //heath
   5, //attack
   0, //mana
@@ -15,7 +15,7 @@ const bobm = new Card(
   0,
 );
 
-const robloxguy = new Card(
+const robloxguy = new card(
   4,
   2,
   1,
@@ -30,7 +30,7 @@ const robloxguy = new Card(
   0,
 );
 
-const vyvanse = new Card(
+const vyvanse = new card(
   0,
   0,
   0,
@@ -45,7 +45,7 @@ const vyvanse = new Card(
   0,
 );
 
-const gluer = new Card(
+const gluer = new card(
   0,
   0,
   0,
@@ -60,7 +60,7 @@ const gluer = new Card(
   0
 );
 
-const cigarguy = new Card(
+const cigarguy = new card(
   4,
   6,
   0,
@@ -75,7 +75,7 @@ const cigarguy = new Card(
   0,
 );
 
-const docholliday = new Card(
+const docholliday = new card(
   3,
   2,
   5,
@@ -90,7 +90,7 @@ const docholliday = new Card(
   2,
 );
 
-const gambler = new Card(
+const gambler = new card(
   2,
   2,
   0,
@@ -106,7 +106,7 @@ const gambler = new Card(
 
 );
 
-const grok = new Card(
+const grok = new card(
   0,
   0,
   0,
@@ -121,7 +121,7 @@ const grok = new Card(
   0,
 );
 
-const Oil_Spill = new Card(
+const Oil_Spill = new card(
   0,
   0,
   0,
@@ -137,7 +137,7 @@ const Oil_Spill = new Card(
 
 );
 
-const wall = new Card(
+const wall = new card(
   0,
   0,
   5,
@@ -153,7 +153,7 @@ const wall = new Card(
 
 );
 
-const Sun = new Card(
+const Sun = new card(
   0,
   0,
   0,
@@ -169,7 +169,7 @@ const Sun = new Card(
 
 );
 
-const funny_vest = new Card(
+const funny_vest = new card(
   0,
   0,
   0,
@@ -185,7 +185,7 @@ const funny_vest = new Card(
 
 );
 
-const nuke = new Card(
+const nuke = new card(
   0,
   0,
   0,
@@ -201,7 +201,7 @@ const nuke = new Card(
 
 );
 
-const JSN_ = new Card(
+const JSN_ = new card(
   5,
   2,
   0,
@@ -217,7 +217,7 @@ const JSN_ = new Card(
 
 );
 
-const mana_card = new Card(
+const mana_card = new card(
   0,
   0,
   0,
@@ -233,7 +233,7 @@ const mana_card = new Card(
 
 );
 
-const cactus_jack = new Card(
+const cactus_jack = new card(
   4,
   2,
   0,
@@ -249,7 +249,7 @@ const cactus_jack = new Card(
 
 );
 
-const draw_more = new Card(
+const draw_more = new card(
   0,
   0,
   0,
@@ -265,7 +265,7 @@ const draw_more = new Card(
 
 );
 
-const health_potion = new Card(
+const health_potion = new card(
   0,
   0,
   0,
@@ -281,7 +281,7 @@ const health_potion = new Card(
 
 );
 
-const bee_keeper = new Card(
+const bee_keeper = new card(
   3,
   1,
   0,
@@ -297,7 +297,7 @@ const bee_keeper = new Card(
 
 );
 
-const seek_n_draw = new Card(
+const seek_n_draw = new card(
   0,
   0,
   0,
@@ -312,7 +312,7 @@ const seek_n_draw = new Card(
   0,
 );
 
-const bishop = new Card(
+const bishop = new card(
   3,
   2,
   0,
@@ -327,7 +327,7 @@ const bishop = new Card(
   0,
 );
 
-const knocker = new Card(
+const knocker = new card(
   0,
   0,
   0,
@@ -342,7 +342,7 @@ const knocker = new Card(
   0,
 );
 
-const health_tower = new Card(
+const health_tower = new card(
   0,
   0,
   3,
@@ -357,7 +357,7 @@ const health_tower = new Card(
   0,
 );
 
-const necromancer = new Card(
+const necromancer = new card(
   3,
   1,
   2,
@@ -372,7 +372,7 @@ const necromancer = new Card(
   0,
 );
 
-const harambe = new Card(
+const harambe = new card(
   5,
   2,
   0,
@@ -387,7 +387,7 @@ const harambe = new Card(
   0,
 );
 
-const beenade = new Card(
+const beenade = new card(
   0,
   2,
   0,
@@ -402,7 +402,7 @@ const beenade = new Card(
   0,
 );
 
-const steal_card = new Card(
+const steal_card = new card(
   0,
   0,
   0,
@@ -417,7 +417,7 @@ const steal_card = new Card(
   0,
 );
 
-const drawer = new Card(
+const drawer = new card(
   3,
   1,
   0,
@@ -432,7 +432,7 @@ const drawer = new Card(
   0,
 );
 
-const wave = new Card(
+const wave = new card(
   0,
   0,
   0,
@@ -447,7 +447,7 @@ const wave = new Card(
   0,
 );
 
-const fog_of_war = new Card(
+const fog_of_war = new card(
   0,
   0,
   0,
@@ -462,7 +462,7 @@ const fog_of_war = new Card(
   0,
 );
 
-const puller = new Card(
+const puller = new card(
   4,
   1,
   0,
@@ -477,7 +477,7 @@ const puller = new Card(
   2,
 );
 
-const bee = new Card(
+const bee = new card(
   1,
   1,
   0,
