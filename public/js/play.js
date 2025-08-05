@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     console.log(customDeckData, "CUSTOM DECK DATA");
 
+    console.log(window.playerNumber, "FIRST CHECK");
+
     if(customDeckData !== null){
       customPlayerDeck = customDeckData.$__parent.decks[customDeckData.$__parent.currentDeck].cardDeck;
       const objectOfObjects = customDeckData.images.reduce((acc, cur) => {
@@ -54,13 +56,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
     }
 
+    console.log(window.playerNumber, "SECOND CHECK");
+
     if(window.playerNumber == 1){
       customDeck2 = customPlayerDeck || customDeckImport;
       customDeck2.sort(() => Math.random() - 0.5);
       console.log("okay this should be player 1", window.playerNumber);
       return;
     }
-    else{
+    if(window.playerNumber == 2){
       customDeck = customPlayerDeck || customDeckImport2;
       customDeck.sort(() => Math.random() - 0.5);
       console.log("okay this should be player 2", window.playerNumber);
@@ -290,6 +294,7 @@ socket.on('player-assigned', (data) => {
 
   window.playerNumber = data.player;
   whosTurn = data.player;
+  console.log(window.playerNumber, 'PLAYER NUMBERR');
 
   const boardContainer = document.getElementById("main-board");
   const cardArea1 = document.getElementById("cardArea1");
