@@ -14,7 +14,7 @@ const upload = multer({ storage: storage, limits: { fileSize: 10 * 1024 * 1024 }
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
-console.log(process.env.MONGODB_URI);
+console.log("BRO AINT NO WAY.");
 const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri, {
   serverApi: {
