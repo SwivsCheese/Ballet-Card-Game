@@ -496,9 +496,7 @@ let customDeckImport = [
   bobm, health_potion, robloxguy, nuke, vyvanse, funny_vest, Sun, cigarguy, bee_keeper,
   docholliday, gambler, grok, draw_more, cactus_jack, wall, mana_card, Oil_Spill, JSN_, draw_more,
   bishop, seek_n_draw, knocker, health_tower, necromancer, harambe, beenade, steal_card, drawer, wave,
-  puller, puller, fog_of_war, seek_n_draw,seek_n_draw,seek_n_draw,seek_n_draw,seek_n_draw,seek_n_draw,
-  steal_card, steal_card, steal_card, steal_card, necromancer, necromancer, necromancer, necromancer,
-  necromancer, necromancer, necromancer, necromancer, necromancer, necromancer, necromancer
+  puller, puller, fog_of_war, 
 ];
 
 export default customDeckImport;
