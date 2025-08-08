@@ -3,6 +3,9 @@
 const create = document.getElementById("createBtn");
 const play = document.getElementById("playBtn");
 const customize = document.getElementById("customizeBtn");
+const tutorial = document.getElementById("tutorial");
+const modal = document.getElementById("myModal");
+const closeModal = document.getElementById("close-modal");
 
 play.addEventListener("click", () => {
   const battle = document.getElementById("battle").value.trim(); //.trim()
@@ -22,6 +25,16 @@ customize.addEventListener("click", () => {
 create.addEventListener("click", () => {
   window.location.href = '/createDeck';
 });
+
+tutorial.addEventListener("click", () => {
+
+  modal.style.display = "block";
+
+});
+
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+})
 
 
 /*
