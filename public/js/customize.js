@@ -131,6 +131,8 @@ save.addEventListener('click', async (e) => {
     });
     const result = await response.json();
     console.log(result);
+
+    window.location.href = `/home`;
     // and then at some point return to the home page
   }
   catch(error){

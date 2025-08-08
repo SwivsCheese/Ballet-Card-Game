@@ -1844,7 +1844,7 @@ function handleCardMouseOver(e){
     attacked = true;
   }
 
-  if(selectedCard && selectedCard != e.currentTarget && activeAbility?.active?.useAgainst){
+  if(selectedCard && selectedCard != e.currentTarget && selectedCard.getAttribute('data-determiner') === "attacker" && activeAbility?.active?.useAgainst){
     ability = true
   }
 

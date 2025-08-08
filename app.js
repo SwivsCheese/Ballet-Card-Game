@@ -232,7 +232,7 @@ app.get('/api/use-custom-deck', async (req, res) => {
   console.log("THIS THE USER", user);
   const nameOfDeck = user.decks.get(user.currentDeck);
 
-  if(!nameOfDeck || !Array.isArray(nameOfDeck.images)){
+  if(!nameOfDeck || !Array.isArray(nameOfDeck.images) || nameOfDeck == "Classic"){
     console.error('Deck data or deck images are missing');
     console.log('ermm, what the sigma?');
     return;
